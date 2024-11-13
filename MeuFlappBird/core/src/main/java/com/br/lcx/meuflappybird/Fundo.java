@@ -2,10 +2,8 @@ package com.br.lcx.meuflappybird;
 
 import static com.br.lcx.meuflappybird.Constantes.*;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.br.lcx.meuflappybird.Constantes;
 
 public class Fundo {
 

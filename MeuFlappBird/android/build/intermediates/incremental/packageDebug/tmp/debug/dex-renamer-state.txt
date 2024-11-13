@@ -1,16 +1,10 @@
-#Wed Nov 13 15:39:08 BRT 2024
-base.0=/home/usuario/Jogo-Flappy-Bird/MeuFlappBird/android/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
-base.1=/home/usuario/Jogo-Flappy-Bird/MeuFlappBird/android/build/intermediates/dex/debug/mergeLibDexDebug/7/classes.dex
-base.2=/home/usuario/Jogo-Flappy-Bird/MeuFlappBird/android/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
-base.3=/home/usuario/Jogo-Flappy-Bird/MeuFlappBird/android/build/intermediates/dex/debug/mergeProjectDexDebug/5/classes.dex
-base.4=/home/usuario/Jogo-Flappy-Bird/MeuFlappBird/android/build/intermediates/desugar_lib_dex/debug/l8DexDesugarLibDebug/classes1000.dex
+#Wed Nov 13 19:43:15 BRT 2024
+base.0=/home/usuario/Jogo-Flappy-Bird/MeuFlappBird/android/build/intermediates/dex/debug/mergeDexDebug/classes.dex
+base.1=/home/usuario/Jogo-Flappy-Bird/MeuFlappBird/android/build/intermediates/desugar_lib_dex/debug/l8DexDesugarLibDebug/classes1000.dex
+base.2=/home/usuario/Jogo-Flappy-Bird/MeuFlappBird/android/build/intermediates/dex/debug/mergeDexDebug/classes2.dex
 path.0=classes.dex
-path.1=7/classes.dex
-path.2=0/classes.dex
-path.3=5/classes.dex
-path.4=classes1000.dex
+path.1=classes1000.dex
+path.2=classes2.dex
 renamed.0=classes.dex
 renamed.1=classes2.dex
 renamed.2=classes3.dex
-renamed.3=classes4.dex
-renamed.4=classes5.dex

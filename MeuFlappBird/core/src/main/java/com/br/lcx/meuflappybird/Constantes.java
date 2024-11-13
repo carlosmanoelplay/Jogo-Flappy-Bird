@@ -12,4 +12,7 @@ public class Constantes {
     public static int pasrad = (int)(0.06f*screenx);
 
     public static int pasInix = (int)(0.2f*screenx);
+
+    public static float decVely = screeny/1.5f;
+    public  static float impulso = screeny/5f;
 }
