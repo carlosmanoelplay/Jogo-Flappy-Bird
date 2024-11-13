@@ -1,0 +1,14 @@
+botoes/BotaoPlay.png
+botoes/BotaoReplay.png
+cano.png
+felpudo/felpudoVoa1.png
+felpudo/felpudoVoa2.png
+felpudo/felpudoVoa3.png
+felpudo/felpudoVoa4.png
+felpudo/felpudoVoa5.png
+felpudo/felpudoVoa6.png
+font.ttf
+fundo.png
+sons/somHit.mp3
+sons/somScore.mp3
+sons/somVoa.mp3

@@ -1,0 +1,14 @@
+com.br.lcx.meuflappybird.android-profileinstaller-1.3.0-0 /home/usuario/.gradle/caches/8.10.2/transforms/3da0ebcfe303679ec191ffe8871d98cd/transformed/profileinstaller-1.3.0/res
+com.br.lcx.meuflappybird.android-startup-runtime-1.1.1-1 /home/usuario/.gradle/caches/8.10.2/transforms/5e2da9d8621751b7ecdd2cc83e82811d/transformed/startup-runtime-1.1.1/res
+com.br.lcx.meuflappybird.android-gdx-backend-android-1.13.0-2 /home/usuario/.gradle/caches/8.10.2/transforms/611daf986a567e7eed7813a8f641f01a/transformed/gdx-backend-android-1.13.0/res
+com.br.lcx.meuflappybird.android-annotation-experimental-1.4.0-3 /home/usuario/.gradle/caches/8.10.2/transforms/78d88454d98e0893920678cf3f7e5ff9/transformed/annotation-experimental-1.4.0/res
+com.br.lcx.meuflappybird.android-core-runtime-2.2.0-4 /home/usuario/.gradle/caches/8.10.2/transforms/b58956d8d673c37133b2224f43b6b63f/transformed/core-runtime-2.2.0/res
+com.br.lcx.meuflappybird.android-core-1.13.1-5 /home/usuario/.gradle/caches/8.10.2/transforms/ccd7ff5efb2dab4a7cbe1fb9f60b4100/transformed/core-1.13.1/res
+com.br.lcx.meuflappybird.android-lifecycle-runtime-2.6.2-6 /home/usuario/.gradle/caches/8.10.2/transforms/d1d6428ed2724f8e911fe7b6bd5cab02/transformed/lifecycle-runtime-2.6.2/res
+com.br.lcx.meuflappybird.android-pngs-7 /home/usuario/Jogo-Flappy-Bird/MeuFlappBird/android/build/generated/res/pngs/debug
+com.br.lcx.meuflappybird.android-resValues-8 /home/usuario/Jogo-Flappy-Bird/MeuFlappBird/android/build/generated/res/resValues/debug
+com.br.lcx.meuflappybird.android-packageDebugResources-9 /home/usuario/Jogo-Flappy-Bird/MeuFlappBird/android/build/intermediates/incremental/debug/packageDebugResources/merged.dir
+com.br.lcx.meuflappybird.android-packageDebugResources-10 /home/usuario/Jogo-Flappy-Bird/MeuFlappBird/android/build/intermediates/incremental/debug/packageDebugResources/stripped.dir
+com.br.lcx.meuflappybird.android-debug-11 /home/usuario/Jogo-Flappy-Bird/MeuFlappBird/android/build/intermediates/merged_res/debug/mergeDebugResources
+com.br.lcx.meuflappybird.android-android-12 /home/usuario/Jogo-Flappy-Bird/MeuFlappBird/android/res
+com.br.lcx.meuflappybird.android-debug-13 /home/usuario/Jogo-Flappy-Bird/MeuFlappBird/android/src/debug/res

@@ -1,11 +1,14 @@
 package com.br.lcx.meuflappybird;
 
+import static com.br.lcx.meuflappybird.Constantes.pasInix;
+import static com.br.lcx.meuflappybird.Constantes.screeny;
+
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.utils.ScreenUtils;
+import com.br.lcx.meuflappybird.Constantes.*;
+
 
 /** {@link com.badlogic.gdx.ApplicationListener} implementation shared by all platforms. */
 public class MainClass extends ApplicationAdapter {
@@ -13,10 +16,14 @@ public class MainClass extends ApplicationAdapter {
     private SpriteBatch batch;
     private Fundo fundo;
 
+    private Passaro passaro;
+
     @Override
     public void create() {
         batch = new SpriteBatch();
         fundo = new Fundo();
+
+        passaro = new Passaro(pasInix, screeny/2);
 
     }
 
@@ -34,6 +41,7 @@ public class MainClass extends ApplicationAdapter {
     }
     private void draw(SpriteBatch batch){
         fundo.draw(batch);
+        passaro.draw(batch);
 
     }
     private void update (float time){
