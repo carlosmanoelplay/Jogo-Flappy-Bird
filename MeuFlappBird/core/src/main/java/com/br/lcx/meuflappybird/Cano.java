@@ -25,6 +25,7 @@ public class Cano {
         }
     }
 
+
     public void draw(SpriteBatch batch) {
         batch.draw(tex, corpo.x, corpo.y, corpo.width, corpo.height,
                 0, 0, tex.getWidth(), tex.getHeight(), false, cima);

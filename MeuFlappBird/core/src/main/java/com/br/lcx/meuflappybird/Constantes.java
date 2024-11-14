@@ -15,5 +15,11 @@ public class Constantes {
 
     public static float decVely = screeny/1.5f;
     public  static float impulso = screeny/5f;
-    public static int canow = (int)(0.02f*screenx);
+    public static int canow = (int)(0.08f*screenx);
+
+    public static float canosTimer = 3f;
+
+    public static int posMax = (int)(0.7f*screeny);
+
+    public static int gap = (int)(0.2f*screeny);
 }

@@ -1,9 +1,6 @@
 package com.br.lcx.meuflappybird;
 
-import static com.br.lcx.meuflappybird.Constantes.pasInix;
-import static com.br.lcx.meuflappybird.Constantes.screenx;
-import static com.br.lcx.meuflappybird.Constantes.screeny;
-
+import static com.br.lcx.meuflappybird.Constantes.*;
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
@@ -11,6 +8,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class MainClass extends ApplicationAdapter {
 
@@ -18,7 +16,9 @@ public class MainClass extends ApplicationAdapter {
     private Fundo fundo;
     private Passaro passaro;
     private List<Cano> canos;
+
     private float canoTimer;
+
 
     @Override
     public void create() {
@@ -26,7 +26,8 @@ public class MainClass extends ApplicationAdapter {
         fundo = new Fundo();
         passaro = new Passaro(pasInix, screeny / 2);
         canos = new ArrayList<>();
-        canoTimer = 0; // Timer para controlar a criação de canos
+        canoTimer = canosTimer; // Timer para controlar a criação de canos
+
     }
 
     @Override
@@ -60,10 +61,14 @@ public class MainClass extends ApplicationAdapter {
         }
 
         // Adicionar um novo cano a cada 2 segundos
-        canoTimer += time;
-        if (canoTimer >= 2f) {
-            canos.add(new Cano(screenx, (float)(Math.random() * screeny / 2) + screeny / 4, true));
-            canoTimer = 0;
+        canoTimer -= time;
+        if (canoTimer <= 0) {
+            Random random = new Random();
+            int pos = random.nextInt(posMax);
+            pos -= posMax/2;
+            canos.add(new Cano(screenx, screeny/2 + pos + gap/2, true));
+            canos.add(new Cano(screenx, screeny/2 + pos - gap/2, false));
+            canoTimer = canosTimer;
         }
 
         passaro.update(time);
