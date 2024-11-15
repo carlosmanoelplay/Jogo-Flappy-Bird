@@ -5,6 +5,7 @@ import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.Intersector;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +19,7 @@ public class MainClass extends ApplicationAdapter {
     private List<Cano> canos;
 
     private float canoTimer;
+    private int estado = 0;  // 1 para jogo rodando, 0 para jogo pausado, 2 para game over, 3 para reiniciar
 
 
     @Override
@@ -50,33 +52,58 @@ public class MainClass extends ApplicationAdapter {
     }
 
     private void update(float time) {
-        fundo.update(time);
+     if (estado == 1) {
+         fundo.update(time);
 
-        // Atualizar a posição dos canos e remover os que saíram da tela
-        for (int i = 0; i < canos.size(); i++) {
-            if (canos.get(i).update(time) == 1) {
-                canos.remove(i);
-                i--;
-            }
-        }
+         // Atualizar a posição dos canos e remover os que saíram da tela
+         for (int i = 0; i < canos.size(); i++) {
+             if (canos.get(i).update(time) == 1) {
+                 canos.remove(i);
+                 i--;
+             }
+         }
 
-        // Adicionar um novo cano a cada 2 segundos
-        canoTimer -= time;
-        if (canoTimer <= 0) {
-            Random random = new Random();
-            int pos = random.nextInt(posMax);
-            pos -= posMax/2;
-            canos.add(new Cano(screenx, screeny/2 + pos + gap/2, true));
-            canos.add(new Cano(screenx, screeny/2 + pos - gap/2, false));
-            canoTimer = canosTimer;
-        }
+         // Adicionar um novo cano a cada 2 segundos
+         canoTimer -= time;
+         if (canoTimer <= 0) {
+             Random random = new Random();
+             int pos = random.nextInt(posMax);
+             pos -= posMax/2;
+             canos.add(new Cano(screenx, screeny/2 + pos + gap/2, true));
+             canos.add(new Cano(screenx, screeny/2 + pos - gap/2, false));
+             canoTimer = canosTimer;
+         }
 
-        passaro.update(time);
+
+         for (Cano c : canos) {
+             if (Intersector.overlaps(passaro.corpo, c.getCorpo())) {
+                 passaro.perdeu();
+                 estado = 2;
+             }
+         }
+     }
+     if (estado == 1 || estado == 2) {
+         passaro.update(time);
+         if (passaro.update(time) == 1) {
+             estado = 3;
+         }
+     }
+
     }
 
     private void input() {
         if (Gdx.input.justTouched()) {
-            passaro.impulso();
+         if (estado == 0){
+             estado = 1;
+         }
+         if (estado == 1){
+             passaro.impulso();
+         } else if (estado == 3 ) {
+             estado = 1;
+             passaro.reiniciar(pasInix, screeny / 2);
+             canos.clear();
+             canoTimer = canosTimer;
+         }
         }
     }
 

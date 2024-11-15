@@ -1,4 +1,4 @@
-#Thu Nov 14 16:15:57 BRT 2024
+#Thu Nov 14 22:39:16 BRT 2024
 base.0=/home/usuario/Jogo-Flappy-Bird/MeuFlappBird/android/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
 base.1=/home/usuario/Jogo-Flappy-Bird/MeuFlappBird/android/build/intermediates/dex/debug/mergeLibDexDebug/7/classes.dex
 base.2=/home/usuario/Jogo-Flappy-Bird/MeuFlappBird/android/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex

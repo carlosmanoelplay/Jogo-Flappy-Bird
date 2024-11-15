@@ -27,12 +27,17 @@ public class Passaro {
         batch.draw(frames[frameIndex], corpo.x - corpo.radius, corpo.y - corpo.radius, corpo.radius * 2, corpo.radius * 2);
     }
 
-    public void update(float time) {
+    public int update(float time) {
         auxFrames += 6 * time;
+
+        // Atualizando a velocidade
         velocidade.y -= decVely * time;
         corpo.y += velocidade.y * time;
 
-        // Limites da tela
+        // Atualiza a posição horizontal
+        corpo.x += velocidade.x * time;
+
+        // Limites da tela - quando o pássaro atingir a parte inferior ou superior da tela
         if (corpo.y + corpo.radius >= screeny) {
             corpo.y = screeny - corpo.radius;
             velocidade.y = 0;
@@ -41,7 +46,13 @@ public class Passaro {
             corpo.y = corpo.radius;
             velocidade.y = 0;
         }
+        if (corpo.x + corpo.radius <= 0) {
+            return 1;
+        }
+        return 0;
     }
+
+
 
     public void impulso() {
         velocidade.y = impulso;
@@ -51,5 +62,16 @@ public class Passaro {
         for (Texture frame : frames) {
             frame.dispose();
         }
+    }
+
+    public void perdeu() {
+        velocidade.x = -Math.abs(canovelx) * 2; // Movendo para a esquerda (valor maior para sair mais rápido)
+        velocidade.y = 0;  // Zera a velocidade vertical, para não afetar o movimento para baixo
+    }
+
+
+    public void reiniciar(int posix, int posy){
+        corpo = new Circle(posix, posy, pasrad);
+        velocidade = new Vector2(0,0);
     }
 }
