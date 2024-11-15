@@ -31,7 +31,7 @@ public class MainClass extends ApplicationAdapter {
     private GlyphLayout glyphLayout = new GlyphLayout();
     private Button btnStart;
     private Button btnRestart;
-
+    private Sons sons;
     @Override
     public void create() {
         batch = new SpriteBatch();
@@ -51,6 +51,7 @@ public class MainClass extends ApplicationAdapter {
 
         btnStart = new Button(new Texture("botoes/BotaoPlay.png"), btnx, btny, btnSize);
         btnRestart = new Button(new Texture("botoes/BotaoReplay.png"), btnx, btny, btnSize);
+        sons = new Sons();
     }
 
     @Override
@@ -113,6 +114,7 @@ public class MainClass extends ApplicationAdapter {
 
          for (Cano c : canos) {
              if (Intersector.overlaps(passaro.corpo, c.getCorpo())) {
+                 sons.play("hit");
                  passaro.perdeu();
                  estado = 2;
              }
@@ -123,6 +125,7 @@ public class MainClass extends ApplicationAdapter {
          if (Intersector.overlaps(passaro.corpo, op.corpo)) {
             if (!marcou) {
                 pontos++;
+                sons.play("score");
                 Gdx.app.log("Pontos", String.valueOf(pontos));
                 marcou = true;
             }
@@ -149,6 +152,7 @@ public class MainClass extends ApplicationAdapter {
             }
             if (estado == 1) {
                 passaro.impulso();
+                sons.play("voa");
             } else if (estado == 3) {
                 btnRestart.verificar(x, y);
             }
@@ -187,5 +191,8 @@ public class MainClass extends ApplicationAdapter {
         }
         batch.dispose();
         font.dispose();
+        btnStart.dispose();
+        btnRestart.dispose();
+        sons.dispose();
     }
 }

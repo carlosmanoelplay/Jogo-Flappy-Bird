@@ -27,6 +27,7 @@ public class Button {
         }
 
         public boolean verificar(int x, int y) {
+
             high = but.contains(x, y);
             return high;
         }
@@ -37,6 +38,9 @@ public class Button {
 
         public void resetHigh() {  // Certifique-se de que este método seja público
             high = false;
+        }
+        public void dispose() {
+            texture.dispose();
         }
     }
 
